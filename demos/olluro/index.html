@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blueprint: Page Stack Navigation</title>
+	<meta name="description" content="Blueprint: A basic template for a page stack navigation effect" />
+	<meta name="keywords" content="blueprint, template, html, css, page stack, 3d, perspective, navigation, menu" />
+	<meta name="author" content="Codrops" />
+	<link rel="shortcut icon" href="favicon.ico">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/basic.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/dropzone.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/3.0.7/flatpickr.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="js/modernizr-custom.js"></script>
+</head>
+
+<body>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:300,400,500,600,700|Oswald:300,400,500,600,700|Open+Sans:400,600,700,800');
+* {
+font-family: 'Playfair Display', sans-serif;
+}
+body {
+color: #2c3e50;
+}
+h1, h2, h3, input {
+font-family: 'Oswald', sans-serif!important;
+}
+h4, h5, h6 {
+font-family: 'Open Sans', sans-serif!important;
+}
+.oswald {
+font-family: 'Oswald', sans-serif!important;
+}
+.open-sans {
+font-family: 'Open Sans', sans-serif!important;
+}
+.playfair-display {
+font-family: 'Playfair Display', sans-serif!important;
+}
+.light {
+font-weight: 300;
+}
+.navbar {
+padding:1rem 8rem;
+border-bottom:1px solid #eee;
+}
+input {
+background:transparent;
+border:0px;
+-o-transition:.25s;
+-ms-transition:.25s;
+-moz-transition:.25s;
+-webkit-transition:.25s;
+transition:.25s;
+}
+::placeholder {
+	color: rgba(10,10,10,.2);
+}
+input:focus {
+outline-width: 0;
+color:#3498db;
+}
+textarea {
+display:block;
+color: #444;
+line-height: 1.6;
+overflow:hidden;
+width:100%;
+background: transparent;
+border:0;
+-o-transition:.25s;
+-ms-transition:.25s;
+-moz-transition:.25s;
+-webkit-transition:.25s;
+transition:.25s;
+}
+textarea:focus {
+outline-width: 0;
+resize: vertical;
+color:#3498db!important;
+}
+.btn-secondary.focus, .btn-secondary:focus {
+box-shadow: 0 0 0 3px rgba(134,142,150,0);
+}
+.title {
+font-size: 4rem;
+font-weight: 700!important;
+color: #222;
+}
+.dropzone {
+border: 3px dashed rgba(10,10,10,.1);
+border-radius: 2px;
+padding-top:100px;
+padding-bottom: 100px;
+}
+
+.dropzone span {
+font-size: 1.25rem;
+font-family: 'Oswald', sans-serif!important;
+font-weight: 700;
+color:rgba(10,10,10,.4);
+transition: .25s;
+}
+#my-awesome-dropzone:hover span {
+color:#3498db;
+}
+.dropzone .dz-preview .dz-image {
+border-radius: 8px;
+}
+.flatpickr-current-month {
+padding:0 0 0 25px;
+}
+.flatpickr-day.disabled, .flatpickr-day.disabled:hover, .flatpickr-day.prevMonthDay, .flatpickr-day.nextMonthDay, .flatpickr-day.notAllowed, .flatpickr-day.notAllowed.prevMonthDay, .flatpickr-day.notAllowed.nextMonthDay, .flatpickr-day {
+background:transparent;
+border-radius: 4px;
+font-family: 'Oswald', sans-serif!important;
+font-weight: 700;
+}
+.flatpickr-calendar {
+box-shadow: 1px 0 0 transparent, -1px 0 0 transparent, 0 1px 0 transparent, 0 -1px 0 transparent, 0 3px 13px rgba(0,0,0,0.0);
+-webkit-box-shadow:1px 0 0 transparent, -1px 0 0 transparent, 0 1px 0 transparent, 0 -1px 0 transparent, 0 3px 13px rgba(0,0,0,0.0);
+}
+.flatpickr-calendar.arrowTop:before {
+display: none;
+}
+.flatpickr-calendar.arrowTop:after {
+display: none;
+}
+.flatpickr-current-month span.cur-month, .flatpickr-current-month .numInputWrapper, span.flatpickr-weekday {
+font-family: 'Oswald', sans-serif!important;
+text-transform: uppercase;
+}
+.col-centered{
+float: none;
+margin: 0 auto;
+}
+.btn-dark {
+background:#222;
+border-color:#222;
+border-radius: 150px;
+}
+.flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay,
+.flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay,.flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay {
+background: #3498db;
+border-color:#3498db;
+}
+#calendar, .form-control:disabled, .form-control[readonly] {
+background: transparent;
+border-color: transparent;
+}
+button:hover {
+cursor:pointer;
+}
+.btn-primary:hover {
+background:rgba(34,34,34,.95);
+border-color:rgba(34,34,34,.95);
+}
+.flatpickr-input.form-control.input {
+padding-left: 0;
+font-size: 2rem;
+font-weight: 700;
+color: #222;
+}
+.btn {
+text-transform: uppercase;
+padding: .5rem 1.5rem;
+font-family: 'Oswald', sans-serif;
+}
+section {
+padding-bottom: 60px;
+}
+.material-icons {
+	font-size: 5rem;
+	padding-bottom: 1.7rem;
+}
+</style>
+	<!-- navigation -->
+	<nav class="pages-nav">
+		<div class="pages-nav__item"><a class="link link--page" href="#page-home"><i class="material-icons">remove_red_eye</i><br>View Lessons</a></div>
+		<div class="pages-nav__item"><a class="link link--page" href="#page-docu"><i class="material-icons">note_add</i><br>Add Lesson</a></div>
+		<div class="pages-nav__item"><a class="link link--page" href="#page-manuals"><i class="material-icons">assignment_ind</i><br>Add Class</a></div>
+		<!-- <div class="pages-nav__item pages-nav__item--small"><a class="link link--page link--faded" href="#page-buy">Where to buy</a></div>
+		<div class="pages-nav__item pages-nav__item--small"><a class="link link--page link--faded" href="#page-blog">Blog &amp; News</a></div>
+		<div class="pages-nav__item pages-nav__item--small"><a class="link link--page link--faded" href="#page-contact">Contact</a></div> -->
+
+		<!-- SOCIAL MEDIA BUTTONS -->
+		<!-- <div class="pages-nav__item pages-nav__item--social">
+			<a class="link link--social link--faded" href="#"><i class="fa fa-twitter"></i><span class="text-hidden">Twitter</span></a>
+			<a class="link link--social link--faded" href="#"><i class="fa fa-linkedin"></i><span class="text-hidden">LinkedIn</span></a>
+			<a class="link link--social link--faded" href="#"><i class="fa fa-facebook"></i><span class="text-hidden">Facebook</span></a>
+			<a class="link link--social link--faded" href="#"><i class="fa fa-youtube-play"></i><span class="text-hidden">YouTube</span></a>
+		</div> -->
+	</nav>
+	<!-- /navigation-->
+	<!-- pages stack -->
+	<div class="pages-stack">
+		<!-- page -->
+		<div class="page" id="page-home">
+			<!-- Blueprint header -->
+    <section style="padding-bottom:60px;padding-top:170px">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 col-centered">
+            <h6 style="margin-bottom:0rem;color:#222;font-weight:800;text-transform:uppercase; font-family:'Open Sans', sans-serif!important">Lesson Title</h6>
+            <h2 class="title oswald" style="padding-top:15px;">All About Atoms</h2>
+            <h4 class="playfair-display" style="color:
+#484848;font-size:1.25rem; padding-top:20px; width:100%;font-weight:300;line-height:1.6;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+		</div>
+		<!-- /page -->
+		<div class="page" id="page-docu">
+
+	<section style="padding-bottom:60px;padding-top:170px">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7 col-centered">
+					<h6 style="margin-bottom:0rem;color:#222;font-weight:800;text-transform:uppercase; font-family:'Open Sans', sans-serif!important">Lesson Title</h6>
+					<textarea class="title oswald" spellcheck="false" rows="1" placeholder="All About Atoms"></textarea>
+					<textarea spellcheck="false"  class="playfair-display" style="color:
+#484848;font-size:1.25rem; padding-top:20px; width:100%;font-weight:300;" rows='3' data-min-rows='3' placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos."></textarea>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section style="padding-top:60px; padding-bottom:60px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7 mx-auto">
+
+					<form action="/file-upload"
+		class="dropzone"
+		id="my-awesome-dropzone"></form>
+		<br>
+		<textarea spellcheck="false"  class="playfair-display" style="font-size:1.25rem; padding-top:20px; width:100%;font-weight:300;" rows='1' data-min-rows='1' placeholder="Hey there! You can add any notes about the classwork and homework assignments here"></textarea>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <section id="contact" style="padding-top:60px;">
+      <div class="container">
+        <div class="row">
+  <div class="col-sm-7 mx-auto">
+    <div class="row">
+      <div class="col-8 col-sm-6">
+        <h6 style="margin-bottom:0rem;color:#222;font-weight:800;text-transform:uppercase; font-family:'Open Sans', sans-serif!important">Due Date</h6>
+
+            <input id="calendar">
+
+
+      </div>
+      <div class="col-4 col-sm-6" id="datepicker">
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+    </section>
+		</div>
+		<div class="page" id="page-manuals">
+			<header class="bp-header cf">
+				<h1 class="bp-header__title">Manuals</h1>
+				<p class="bp-header__desc">Based on Ilya Kostin's Dribbble shot <a href="https://dribbble.com/shots/2286042-Stacked-navigation">Stacked navigation</a></p>
+				<p class="info">
+					"When you adopt a vegan diet we make a connection, you don't go back, it is not a diet, it is a lifestyle." &mdash; Freelee Frugivore
+				</p>
+			</header>
+			<img class="poster" src="images/2.jpg" alt="img02" />
+		</div>
+	</div>
+
+	<!-- DEPENDENCIES -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.5/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+	<nav class="navbar bg-faded nav-fixed" id="add_nav">
+<a class="navbar-brand" href="#">Olluro</a>
+
+<div>
+<ul class="navbar-nav mr-auto mt-2 mt-md-0">
+</ul>
+<form class="form-inline my-2 my-lg-0" id="add_lesson_button" id="add_lesson_button">
+<button class="btn btn-primary btn-dark my-2 my-sm-0" type="submit"><i class="fa fa-plus" aria-hidden="true"></i> &nbsp; Add Lesson</button>
+</form>
+</div>
+</nav>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/autosize@4.0.0/dist/autosize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/3.0.7/flatpickr.min.js"></script>
+	<button class="menu-button"><span>Menu</span></button>
+	<script src="js/classie.js"></script>
+	<script src="js/main.js"></script>
+
+	<script>
+		// if(!$('#page-docu').hasClass("page--inactive")){
+		// 	alert("Awesome");
+		// }
+		if($('#page-docu').css('overflow') == 'scroll'){
+			alert('Qeom');
+		}
+		else {
+			console.log('Goodness');
+		}
+	</script>
+</body>
+
+</html>
