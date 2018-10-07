@@ -1,4 +1,5 @@
 /* your styles go here */
+
 body,
 h1,
 h2,
@@ -20,6 +21,10 @@ h6,
     padding: 10px;
 }
 
+.project:first-child {
+    margin-top: 0;
+}
+
 .project {
-    padding: 30px 0;
+    margin: 4rem 0;
 }
