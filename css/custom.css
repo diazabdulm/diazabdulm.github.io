@@ -21,6 +21,10 @@ h6,
     padding: 10px;
 }
 
+#work-experience img {
+	max-width: 300px;
+}
+
 .project:first-child {
     margin-top: 0;
 }
