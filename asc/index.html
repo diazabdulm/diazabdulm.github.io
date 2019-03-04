@@ -1,0 +1,169 @@
+<!---
+
+	Use single quotes
+
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+		<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1.0'>
+		<title>Abdul Diaz - Personal Page</title>
+
+		<!-- CSS  -->
+		<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css' type='text/css' rel='stylesheet' media='screen,projection'>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+		<link href='./style.css' type='text/css' rel='stylesheet' media='screen,projection'>
+	</head>
+	<body>
+		<!-- Header -->
+		<div class="section animated fadeInUp">
+			<div class="container">
+				<div class="row">
+					<div class="col s12 m8">
+						<h1 class="header bold">
+							Hi.
+							<br />
+							I'm Abdul Diaz, a
+							<span class='accent'>programmer and designer</span>
+							from New York City.
+						</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Designs -->
+		<div class="section animated fadeInUp">
+			<div class="container">
+				<div class="row">
+					<div class="col s12">
+						<h1 class="header bold">My Designs</h1>
+						<div class="underline-style pink"></div>	
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12">
+						<div class="slider">
+							<ul class="slides">
+								<li>
+									<img src="https://mir-s3-cdn-cf.behance.net/project_modules/source/dce74646831391.5865d2a1c862e.png">
+								</li>
+								<li>
+									<img src="https://assets.materialup.com/uploads/ffd67f47-2726-4e76-8af2-5e93de39f097/preview.png">
+								</li>
+								<li>
+									<img src="https://mir-s3-cdn-cf.behance.net/project_modules/source/b5b91d45644167.5837798f8d436.png">
+								</li>
+								<li>
+									<img src="https://assets.materialup.com/uploads/d8faa42a-698d-4ad5-91ea-6e40fe9c6c42/preview.png">
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- About Me -->
+		<div class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col s12">
+						<h1 class="header bold">About Me</h1>
+						<div class="underline-style pink"></div>	
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12 m6">
+						<p>
+							I'm Abdul, a high school student from New York City. I've been coding and designing for five years. I love coding for the good of others. I think back to eighth grade, trying to code a video game to help students with math. It was a pretty cool game where you jump and....sorry, off topic. But you'd usually find me reading psychology or self-help books or programming cool projects. If you'd like to stay in touch, feel free to email me any time.
+						</p>
+						<img class="responsive-img circle" src="./img/profile.png">
+					</div>
+					<div class="col s12 m6">
+						<p>
+							I'm highly skilled in HTML, PugJS, CSS, SASS, Javascript, and the jQuery, NodeJS, ReactJS, React Native, ExpressJS, etc. frameworks. I also have experience with MongoDB, Firebase. And so much more I would love to list here but can't remember.
+						</p>
+						<span class="bold grey-text">HTML</span>
+						<div class="progress pink lighten-4">
+							<div class="determinate pink" style="width: 100%"></div>
+						</div>
+
+						<span class="bold grey-text">CSS</span>
+						<div class="progress pink lighten-4">
+							<div class="determinate pink" style="width: 95%"></div>
+						</div>
+						
+						<span class="bold grey-text">JS</span>
+						<div class="progress pink lighten-4">
+							<div class="determinate pink" style="width: 90%"></div>
+						</div>
+
+						<span class="bold grey-text">Python</span>
+						<div class="progress pink lighten-4">
+							<div class="determinate pink" style="width: 50%"></div>
+						</div>
+
+						<span class="bold grey-text">ReactJS, React Native, jQuery, etc.</span>
+						<div class="progress pink lighten-4">
+							<div class="determinate pink" style="width: 90%"></div>
+						</div>
+
+						<span class="bold grey-text">Sense of Humor</span>
+						<div class="progress pink lighten-4">
+							<div class="determinate pink" style="width: 10%"></div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Contact Form -->
+		<div class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col s12">
+						<h1 class="header bold">Contact Me</h1>
+						<div class="underline-style pink"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12 m6">
+						<div class="row">
+							<div class="input-field col s12 m6">
+								<input id="first_name" type="text" value="Abdul" />
+								<label for="first_name">First Name</label>
+							</div>
+							<div class="input-field col s12 m6">
+								<input id="last_name" type="text" value="Diaz" />
+								<label for="last_name">Last Name</label>
+							</div>
+							<div class="input-field col s12">
+								<input id="email" type="email" value="emailme@allstarcode.org" />
+								<label for="email">Email</label>
+							</div>
+							<div class="input-field col s12">
+								<textarea id="message" class="materialize-textarea">Try not to click the message button! It's tempting, I know.</textarea>
+								<label for="message">Message</label>
+							</div>
+							<div class="input-field col s12">
+								<input type="submit" value="Message Me" class="btn pink" onclick="M.toast({html: 'Thank you for your message!'})" />
+							</div>
+						</div>
+					</div>
+					<div class="col s12 m6">
+						<p>
+							This is sample copy text. Lorem Ipsum is overused so here's a fresh new sample. Haha I hope you enjoyed this project. You know, I have a Great Aunt Sally who....sorry, off topic once again. But yes, if you'd like to check my Github, feel free to do so. Just keep in mind, most of my cool projects are private. I should probably change that...
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'></script>
+		<script type="text/javascript" src='./index.js'></script>
+	</body>
+</html>

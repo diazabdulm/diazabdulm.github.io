@@ -1,0 +1,21 @@
+p {
+	font-size: 1.15rem;
+	line-height: 1.5;
+}
+
+.bold {
+	font-weight: 600;
+}
+
+.accent {
+	color: #e91e63;
+}
+
+.underline-style {
+	width: 7rem;
+	height: .25rem;
+}
+
+.progress {
+	height: 15px;
+}
